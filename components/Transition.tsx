@@ -33,7 +33,7 @@ const Transition: React.FC = () => {
           duration: 0.6,
           ease: 'easeInOut',
         }}
-        className='fixed top-0 bottom-0 right-full w-screen h-screen z-30 bg-white'
+        className='fixed bottom-0 right-full top-0 z-300 h-screen w-screen bg-white'
       ></motion.div>
 
       <motion.div
@@ -46,7 +46,7 @@ const Transition: React.FC = () => {
           duration: 0.6,
           ease: 'easeInOut',
         }}
-        className='fixed top-0 bottom-0 right-full w-screen h-screen z-20 bg-black'
+        className='fixed bottom-0 right-full top-0 z-299 h-screen w-screen bg-black'
       ></motion.div>
 
       <motion.div
@@ -59,7 +59,7 @@ const Transition: React.FC = () => {
           duration: 0.6,
           ease: 'easeInOut',
         }}
-        className='fixed top-0 bottom-0 right-full w-screen h-screen z-10 bg-orange-300'
+        className='fixed bottom-0 right-full top-0 z-298 h-screen w-screen bg-orange-300'
       ></motion.div>
     </>
   )

@@ -1,42 +1,31 @@
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* 滚动条整体样式 */  
+::-webkit-scrollbar {  
+  /* 垂直滚动条宽度 */
+  width: 6px;      
+  /* 水平滚动条高度 */
+  /* height: 12px;               */
+}  
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* 滚动条滑块 */  
+::-webkit-scrollbar-thumb {  
+  background-color: #ddd; /* 滑块颜色 */  
+  /* 滑块圆角 */
+  border-radius: 10px;      
+  /* border: 2px solid transparent; 滑块边框   */
+  background-clip: content-box; /* 背景绘制区域，内容框 */  
+}  
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+/* 滚动条轨道 */  
+::-webkit-scrollbar-track {  
+  /* 轨道颜色  */
+  background: #f1f1f1;      
+  /* 轨道圆角 */
+  /* border-radius: 10px;        */
+  /* 轨道内部阴影 */
+  /* box-shadow: inset 0 0 5px grey;    */
+}  
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
+::-webkit-scrollbar-button {  
+  background: #ccc;  
+  display: none;
+}  

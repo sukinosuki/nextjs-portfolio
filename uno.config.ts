@@ -11,4 +11,9 @@ export default defineConfig({
     presetUno(),
     // ...
   ],
+  theme: {
+    colors: {
+      primary: '#FDC435',
+    },
+  },
 })
