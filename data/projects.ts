@@ -16,10 +16,10 @@ export const projects: Project[] = [
     skill_stack: ['flutter', 'dart'],
   },
   {
-    name: '',
-    repository: '',
+    name: 'Nextjs Portfolio',
+    repository: 'https://github.com/sukinosuki/nextjs-portfolio',
     preview: '',
-    description: '',
+    description: '使用Nextjs + Framer motion编写的个人信息页面',
     skill_stack: [],
   },
   {

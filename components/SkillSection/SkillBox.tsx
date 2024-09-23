@@ -27,12 +27,16 @@ const SkillBox: React.FC<TProps> = ({
     [0, 1, 1, 0]
   )
 
+  const bgY = useTransform(scrollYProgress, [base, base + 0.4], [0, 20])
   return (
     <motion.div
       style={{
         opacity,
         y,
         rotateY: 20,
+        backgroundImage: 'url(/images/bg1.svg)',
+        backgroundPositionY: bgY,
+        backgroundPositionX: bgY,
       }}
       className={`${className} absolute left-1/2 right-1/2 w-90 translate-x-1/2 translate-y-1/2 rounded-2xl p-5 text-8 text-#25282B`}
     >

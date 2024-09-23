@@ -22,7 +22,8 @@ export default function Home() {
   const { scrollYProgress } = useScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.5])
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.9])
-
+  const intro =
+    '你好，这里是桜花秋水，一名前端兼后端开发。我正在考虑新的工作机会。你可以在下面的联系方式找到我。'
   //
   const initAnimation = async () => {
     const bounds = nameRef.current?.getBoundingClientRect()
@@ -58,9 +59,6 @@ export default function Home() {
       width: 80,
       scale: 1,
       opacity: 1,
-      transition: {
-        // ease: 'backInOut',
-      },
     })
 
     nameDotControl.start({
@@ -81,10 +79,7 @@ export default function Home() {
       <ReactLenis
         root
         options={{
-          // Learn more -> https://github.com/darkroomengineering/lenis?tab=readme-ov-file#instance-settings
           lerp: 0.05,
-          //   infinite: true,
-          //   syncTouch: true,
         }}
       >
         <svg height='0' width='0'>
@@ -107,9 +102,9 @@ export default function Home() {
               style={{
                 clipPath: 'url(#svgPath)',
                 backgroundImage:
-                  'url(https://gd-hbimg.huaban.com/578ee987c9598f2db9651b766d553e000618e7c72e93c-esF1nB_fw658webp)',
+                  'url(https://pcsdata.baidu.com/thumbnail/b1852a4d0n850ed9d5e182ee073ea0f1?fid=4231269538-16051585-906965282003349&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-2TD3dfL4J%2BKGIH1sdXusydlULT8%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=414059372612633310&dp-callid=0&time=1727053200&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video)',
                 backgroundPositionX: 0,
-                backgroundPositionY: -150,
+                backgroundPositionY: -200,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
               }}
@@ -144,7 +139,25 @@ export default function Home() {
                 className='mt-4 flex flex-col text-13 text-#25282B font-bold max-md-text-8'
               >
                 <span>Hello, my name is</span>
-                <div className='relative text-16 max-md-text-12'>
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: -10,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    y: -20,
+                  }}
+                  transition={{
+                    delay: 0.8,
+                    duration: 1.2,
+                  }}
+                  className='relative text-16 max-md-text-12'
+                >
                   <motion.span
                     className='inline-block overflow-hidden'
                     initial={{
@@ -179,7 +192,7 @@ export default function Home() {
                     animate={nameDotControl}
                     className='absolute bottom-10 left-0 inline-block h-4 w-4 rounded-full bg-black'
                   ></motion.span>
-                </div>
+                </motion.div>
               </motion.h3>
               <motion.h4
                 initial={{ opacity: 0, y: -10 }}
@@ -192,18 +205,18 @@ export default function Home() {
                   y: -20,
                 }}
                 transition={{
-                  delay: 0.2,
+                  delay: 1.2,
                   duration: 1.2,
                 }}
                 className='text-5 text-primary font-bold'
               >
                 <TypeAnimation
                   sequence={[
-                    1000,
+                    2000,
                     'A FULL-STACK <DEVELOPER />。',
-                    1000,
+                    2000,
                     'A ACG 爱好者。',
-                    1000,
+                    // 1000,
                   ]}
                   repeat={Infinity}
                 ></TypeAnimation>
@@ -223,15 +236,15 @@ export default function Home() {
                   y: -20,
                 }}
                 transition={{
-                  delay: 0.6,
+                  delay: 1.6,
                   duration: 1.2,
                 }}
                 className='mt-8 text-5 text-#828282'
               >
-                你好，这里是桜花秋水。你可以在下面的联系方式找到我。
+                {intro}
               </motion.p>
 
-              <SocialList className='mt-10' />
+              <SocialList delayAnimate={2} className='mt-10' />
             </motion.div>
           </div>
         </div>

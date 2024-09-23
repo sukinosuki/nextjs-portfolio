@@ -21,6 +21,13 @@ type TProps = {
   distanceThreshold?: number
 }
 
+type ImagePosition = {
+  xOrigin: number
+  yOrigin: number
+  x: number
+  y: number
+  style: React.CSSProperties
+}
 const MouseTrailImages: React.FC<TProps> = ({
   distanceThreshold = 90,
   children,
@@ -31,7 +38,7 @@ const MouseTrailImages: React.FC<TProps> = ({
     prevImage: { x: 0, y: 0 },
   }).current
 
-  const imagePositions = useRef([])
+  const imagePositions = useRef<ImagePosition[]>([])
 
   const [index, setIndex] = useState(0)
 

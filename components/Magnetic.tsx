@@ -49,7 +49,6 @@ const Magnetic: React.FC<TProps> = ({ children }) => {
       whileHover='hovered'
       initial='initial'
       className='duration-700 ease-out'
-      //   className='group relative h-55 w-55 overflow-hidden border-2 border-black rounded-full duration-700 ease-out'
     >
       {children}
     </motion.div>
