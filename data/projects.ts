@@ -7,7 +7,7 @@ export const projects: Project[] = [
     preview: 'https://miiro-blog2.pages.dev/',
     description: '一个Nuxt3编写的博客',
     skill_stack: ['nuxt3', 'vue3', 'vueuse motion', 'drizzle'],
-    cover: '/images/project/miiro_blog.png',
+    cover: '/images/project/miiro_blog.jpg',
   },
   {
     name: 'Duel Links Meta App',
@@ -15,7 +15,7 @@ export const projects: Project[] = [
     preview: null,
     description: 'Duel Links Meta的非官方个人向app',
     skill_stack: ['flutter', 'dart'],
-    cover: '/images/project/duel_links_meta_app.png',
+    cover: '/images/project/duel_links_meta_app.jpg',
   },
   {
     name: 'Nextjs Portfolio',
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     preview: '',
     description: '使用Nextjs + Framer motion编写的个人信息页面',
     skill_stack: ['react', 'nextjs', 'framer motion'],
-    cover: '/images/project/next_profile.png',
+    cover: '/images/project/next_profile.jpg',
   },
   {
     name: 'Momo Chat',
