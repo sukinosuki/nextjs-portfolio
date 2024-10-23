@@ -4,4 +4,5 @@ export type Project = {
   name: string
   description: string
   skill_stack: string[]
+  cover: string
 }

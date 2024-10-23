@@ -1,5 +1,6 @@
 ## 使用Nextjs + framer motion编写的个人信息页面
 
+![view](/public/images/project/next_profile.png)
 ## 感谢/Thanks
 
 #### 模板

@@ -17,6 +17,8 @@ export default function Home() {
   const nameClipPathControl = useAnimationControls()
   const nameDotControl = useAnimationControls()
   const nameFlowerControl = useAnimationControls()
+  const profileImageControl = useAnimationControls()
+
   const nameRef = useRef<HTMLElement | null>(null)
 
   const { scrollYProgress } = useScroll()
@@ -61,14 +63,22 @@ export default function Home() {
       opacity: 1,
     })
 
-    nameDotControl.start({
-      x: (bounds?.width || 0) + 80,
-      transition: {
-        ease: 'backInOut',
-        damping: 10,
-        stiffness: 300,
-      },
-    })
+    nameDotControl
+      .start({
+        x: (bounds?.width || 0) + 80,
+        transition: {
+          ease: 'backInOut',
+          damping: 10,
+          stiffness: 300,
+        },
+      })
+      .then(() => {
+        profileImageControl.start({
+          y: 0,
+          scale: 1,
+          opacity: 1,
+        })
+      })
   }
   useEffect(() => {
     initAnimation()
@@ -101,14 +111,25 @@ export default function Home() {
               className='absolute top-0 h-200 w-200 origin-top-right overflow-hidden bg-sky -right-30 max-md-hidden max-lg-scale-70'
               style={{
                 clipPath: 'url(#svgPath)',
-                backgroundImage:
-                  'url(https://pcsdata.baidu.com/thumbnail/b1852a4d0n850ed9d5e182ee073ea0f1?fid=4231269538-16051585-906965282003349&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-2TD3dfL4J%2BKGIH1sdXusydlULT8%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=414059372612633310&dp-callid=0&time=1727053200&bus_no=26&size=c1600_u1600&quality=100&vuk=-&ft=video)',
-                backgroundPositionX: 0,
-                backgroundPositionY: -200,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
               }}
-            ></div>
+            >
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 5,
+                  scale: 0.9,
+                }}
+                animate={profileImageControl}
+                className='h-full w-full'
+                style={{
+                  backgroundImage: 'url(/images/profile.jpg)',
+                  backgroundPositionX: 0,
+                  backgroundPositionY: -200,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'cover',
+                }}
+              ></motion.div>
+            </div>
           </div>
 
           <div className='mx-auto h-screen flex items-center md-w-700px xl:w-1200px max-md-justify-center max-md-px-4'>

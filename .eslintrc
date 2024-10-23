@@ -3,7 +3,8 @@
 
   "rules": {
       "@unocss/order": "error", // or "error",
-      "@unocss/enforce-class-compile": "error"
+      "@unocss/enforce-class-compile": "error",
+      "@next/next/no-img-element": "off"
       // "@unocss/<another-rule-name>": ["warn" /* or "error" */, { /* options */ }]
   }
 }
